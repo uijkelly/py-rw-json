@@ -27,5 +27,6 @@ with open('ex_form_json_updated.json', 'w') as f:
 
 # or transform and write to a new element?
 jdata["data"][0]["NEWVAL"] = 51
+# and write
 with open('ex_form_json_new.json', 'w') as f:
     json.dump(jdata,f)
