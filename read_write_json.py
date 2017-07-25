@@ -23,10 +23,19 @@ print("getting at one single param value is ", jdata["data"][0]["VAL"])
 jdata["data"][0]["VAL"] = 51
 # Writing JSON data
 with open('ex_form_json_updated.json', 'w') as f:
-     json.dump(jdata, f)
+     json.dump(jdata, f, indent=2)
 
 # or transform and write to a new element?
 jdata["data"][0]["NEWVAL"] = 51
+jdata["data"][0]["VAL"] = 50 #set back to previous
 # and write
 with open('ex_form_json_new.json', 'w') as f:
-    json.dump(jdata,f)
+    json.dump(jdata,f, indent=2)
+
+# add a totally new element?
+# could just make sure that the form sends me all the elements I will need even if they are blank?
+#max = jdata["count"]
+#jdata["data"].update({"PARAM" = "ADDED_THIS"})
+jdata["data"].append({"PARAM":"ADDED_PARAMETER", "VAL":400, "FORTRAN_TYPE":"INTEGER"})
+with open('ex_form_json_added', 'w') as f:
+    json.dump(jdata,f,indent=2)
