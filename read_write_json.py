@@ -33,9 +33,6 @@ with open('ex_form_json_new.json', 'w') as f:
     json.dump(jdata,f, indent=2)
 
 # add a totally new element?
-# could just make sure that the form sends me all the elements I will need even if they are blank?
-#max = jdata["count"]
-#jdata["data"].update({"PARAM" = "ADDED_THIS"})
 jdata["data"].append({"PARAM":"ADDED_PARAMETER", "VAL":400, "FORTRAN_TYPE":"INTEGER"})
 with open('ex_form_json_added', 'w') as f:
     json.dump(jdata,f,indent=2)
